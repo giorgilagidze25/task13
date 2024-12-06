@@ -2,14 +2,13 @@ import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import hobyy from '../hobyy';
 import Header from '../components/Header';
-import NotFound from './NotFound'; // შეცდომის კომპონენტი
+import NotFound from './NotFound'; 
 
 export default function HobbyDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const hobby = hobyy.find((el) => el.id === parseInt(id));
 
-  // თუ ჰობი არ მოიძებნა, აჩვენე შეცდომის გვერდი ან გადაამისამართე
   if (!hobby) {
     return <NotFound />;
   }
